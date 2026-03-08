@@ -1,0 +1,175 @@
+body {
+  background: #042e4b;
+	color: #fff;
+  font: 19px/1.5 'Fira Sans Extra Condensed', Helvetica, Helvetica Neue, Arial;
+  height: 100%;
+  width: 100%;
+}
+
+body, figure, image {
+  margin: 0;
+  padding: 0;
+}
+
+.intro {
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/579121/sky-backr2.jpg') no-repeat;
+	background-size: cover;
+	height: 100vh;
+	position: relative;
+	z-index: -1;
+}
+.tulips {
+	bottom: -10px;
+	left: 0;
+	overflow: hidden;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	z-index: 1;
+}
+
+.stemEnd1, .stemEnd2, .stemEnd3, .stemEnd4 {
+  visibility:hidden;
+}
+
+
+
+/* TEXTO CENTRADO Y BRILLO */
+.text{
+  position:absolute;
+  top:20%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  font-size:40px;
+  text-align:center;
+  color:#ffd700;
+  text-shadow:
+  0 0 10px #ffd700,
+  0 0 20px #ff69b4,
+  0 0 40px #ff1493;
+  width:80%;
+  z-index:3;
+}
+/* cursor que parpadea */
+#typing::after{
+  content:"|";
+  animation: blink 1s infinite;
+}
+
+@keyframes blink{
+  0%{opacity:1;}
+  50%{opacity:0;}
+  100%{opacity:1;}
+}
+
+/* PETALOS */
+.petals{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  overflow:hidden;
+  z-index:5; /* delante del fondo */
+}
+/*
+.petal{
+  position:absolute;
+  width:15px;
+  height:20px;
+  background: radial-gradient(circle at 30% 30%, #ffb6c1, #ff1493);
+  border-radius:60% 40% 60% 40%;
+  opacity:0.9;
+  top:-50px;
+  animation: fall linear infinite;
+}
+*/
+.petal{
+  position:absolute;
+  width:18px;
+  height:22px;
+  background: radial-gradient(circle at 40% 30%, #ff9ecb, #ff2a6d);
+  clip-path: polygon(
+    50% 0%,
+    80% 20%,
+    100% 50%,
+    80% 80%,
+    50% 100%,
+    20% 80%,
+    0% 50%,
+    20% 20%
+  );
+  opacity:0.9;
+  top:-50px;
+  animation: fall linear infinite;
+}
+/*
+@keyframes fall{
+  0%{
+    transform:translateY(-50px) rotate(0deg);
+  }
+  100%{
+    transform:translateY(110vh) rotate(360deg);
+  }
+}*/
+
+@keyframes fall{
+  0%{
+    transform:translateY(-50px) rotate(0deg) translateX(0);
+  }
+  50%{
+    transform:translateY(50vh) rotate(180deg) translateX(30px);
+  }
+  100%{
+    transform:translateY(110vh) rotate(360deg) translateX(-30px);
+  }
+}
+
+.foto-amor{
+position:absolute;
+top:45%;
+left:50%;
+transform:translate(-50%,-50%);
+width:200px;
+}
+
+.foto-amor img{
+width:100%;
+opacity:0.9;
+filter:drop-shadow(0 0 15px pink);
+transition:opacity 1s;
+}
+
+#nombreFoto{
+margin-top:10px;
+font-size:20px;
+color:#ffb6f2;
+font-weight:bold;
+text-shadow:0 0 10px pink;
+transition:opacity 1s;
+text-align:center;   /* centra el texto */
+width:100%;          /* ocupa todo el ancho */
+}
+
+
+.boton-musica{
+position:fixed;
+bottom:20px;
+left:50%;
+transform:translateX(-50%);
+background:#ff69b4;
+color:white;
+padding:10px 20px;
+border-radius:20px;
+font-size:16px;
+cursor:pointer;
+box-shadow:0 0 10px pink;
+}
+
+@media (max-width:600px){
+.foto-amor img{
+width:80%;
+max-width:320px;
+}
+}
