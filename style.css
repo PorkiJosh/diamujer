@@ -168,8 +168,24 @@ box-shadow:0 0 10px pink;
 }
 
 @media (max-width:600px){
+.foto-amor{
+top:50%;
+width:45vw;   /* ahora usa 75% de la pantalla */
+}
+
 .foto-amor img{
-width:80%;
-max-width:320px;
+width:100%;
+}
+
+#nombreFoto{
+font-size:18px;
+}
+
+.text{
+font-size:20px;
+}
+
+.boton-musica{
+font-size:15px;
 }
 }
